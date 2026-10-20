@@ -1,0 +1,141 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>POS specialty catalogs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+<style>
+html,body{margin:0;background:#fff}
+.posfl{--green:#009A44;--ink:#1f2224;--body:#54585A;--mid:#898D8D;--line:#e3e6e6;--tint:#f4f5f5;font-family:'Montserrat',Arial,Helvetica,sans-serif;font-weight:300;color:var(--body);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;}
+.posfl *{box-sizing:border-box;} .posfl p{margin:0}
+.posfl .cats{background:#fff;padding:40px 24px 28px;scroll-margin-top:90px;border-bottom:1px solid var(--line);}
+.posfl .cats .in{max-width:1180px;margin:0 auto;}
+.posfl .cats h2{font-weight:300;color:var(--ink);font-size:clamp(24px,2.6vw,32px);line-height:1.2;margin:0;}
+.posfl .cats h2 b{color:var(--green);font-weight:700;}
+.posfl .cats .lede{max-width:70ch;margin:0 0 18px;}
+.posfl .ctabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;}
+.posfl .ctabs button{font:inherit;font-weight:600;font-size:.88rem;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.posfl .ctabs button:hover{border-color:var(--green);}
+.posfl .ctabs button[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff;}
+.posfl .ctabs a{display:inline-block;font-weight:600;font-size:.88rem;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;}
+.posfl .ctabs a:hover{border-color:var(--green);}
+.posfl .ctabs a[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff;}
+.posfl .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.posfl .ccard{background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;}
+.posfl .ccard .cn{font-weight:600;color:var(--ink);}
+.posfl .ccard .cl{display:flex;gap:14px;font-size:.9rem;}
+.posfl .ccard .cl a{color:var(--green);font-weight:600;text-decoration:none;}
+.posfl .viewer[hidden]{display:none;}
+.posfl .viewer{background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:18px;}
+.posfl .vstage{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;touch-action:pan-y;outline:none;}
+.posfl .vpage{max-width:100%;box-shadow:0 14px 34px rgba(31,34,36,.16);background:#fff;transition:transform .28s ease,opacity .28s ease;}
+.posfl .vpage canvas{display:block;width:100%;height:auto;}
+.posfl .vpage.out-l{transform:translateX(-40px) rotateY(12deg);opacity:0;}
+.posfl .vpage.out-r{transform:translateX(40px) rotateY(-12deg);opacity:0;}
+.posfl .vnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 16px rgba(31,34,36,.12);}
+.posfl .vnav:hover{border-color:var(--green);color:var(--green);}
+.posfl .vnav:disabled{opacity:.35;cursor:default;}
+.posfl .vprev{left:4px;} .posfl .vnext{right:4px;}
+.posfl .vmsg{color:var(--mid);font-size:.92rem;}
+.posfl .vbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;}
+.posfl .vcount{font-size:.9rem;color:var(--body);}
+.posfl .vdots{display:flex;gap:6px;flex-wrap:wrap;}
+.posfl .vdots button{width:9px;height:9px;border-radius:50%;border:0;background:#cfd3d3;padding:0;cursor:pointer;}
+.posfl .vdots button[aria-current="true"]{background:var(--green);}
+.posfl .vdl{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;background:var(--green);color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;}
+.posfl .vdl:hover{filter:brightness(.95);}
+@media(max-width:900px){.posfl .cats{padding:32px 18px 22px;}.posfl .vstage{min-height:300px;}.posfl .vnav{width:40px;height:40px;}}
+.posfl .cats{padding:4px 0 0;border-bottom:0;}
+.posfl .cgrid[hidden]{display:none;}
+</style></head><body><div class="posfl">
+<section class="cats" id="catalogs">
+<div class="in">
+<div class="ctabs" role="tablist" aria-label="Specialty"><a href="POS_Catalog_PrimaryCare_web.pdf" target="_blank" rel="noopener" role="tab" data-i="0">Primary care</a><a href="POS_Catalog_EyeCare_web.pdf" target="_blank" rel="noopener" role="tab" data-i="1">Eye care</a><a href="POS_Catalog_Dentistry_web.pdf" target="_blank" rel="noopener" role="tab" data-i="2">Dentistry</a><a href="POS_Catalog_Pediatrics_web.pdf" target="_blank" rel="noopener" role="tab" data-i="3">Pediatrics</a><a href="POS_Catalog_Dermatology_web.pdf" target="_blank" rel="noopener" role="tab" data-i="4">Dermatology</a><a href="POS_Catalog_OBGYN_web.pdf" target="_blank" rel="noopener" role="tab" data-i="5">OB/GYN</a><a href="POS_Catalog_NewPatient_web.pdf" target="_blank" rel="noopener" role="tab" data-i="6">New patient</a></div>
+<div class="cgrid"><div class="ccard"><span class="cn">Primary care</span><span class="cl"><a href="POS_Catalog_PrimaryCare_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_PrimaryCare_web.pdf" download="POS Stock Mail Catalog - Primary care.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">Eye care</span><span class="cl"><a href="POS_Catalog_EyeCare_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_EyeCare_web.pdf" download="POS Stock Mail Catalog - Eye care.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">Dentistry</span><span class="cl"><a href="POS_Catalog_Dentistry_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_Dentistry_web.pdf" download="POS Stock Mail Catalog - Dentistry.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">Pediatrics</span><span class="cl"><a href="POS_Catalog_Pediatrics_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_Pediatrics_web.pdf" download="POS Stock Mail Catalog - Pediatrics.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">Dermatology</span><span class="cl"><a href="POS_Catalog_Dermatology_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_Dermatology_web.pdf" download="POS Stock Mail Catalog - Dermatology.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">OB/GYN</span><span class="cl"><a href="POS_Catalog_OBGYN_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_OBGYN_web.pdf" download="POS Stock Mail Catalog - OB-GYN.pdf">Download PDF</a></span></div><div class="ccard"><span class="cn">New patient</span><span class="cl"><a href="POS_Catalog_NewPatient_web.pdf" target="_blank" rel="noopener">Open</a><a href="POS_Catalog_NewPatient_web.pdf" download="POS Stock Mail Catalog - New patient.pdf">Download PDF</a></span></div></div>
+<div class="viewer" hidden>
+<div class="vstage" tabindex="0" aria-label="Catalog page viewer. Use the arrow keys to turn pages.">
+<button class="vnav vprev" type="button" aria-label="Previous page">&lsaquo;</button>
+<div class="vpage"><div class="vmsg">Loading the catalog&hellip;</div></div>
+<button class="vnav vnext" type="button" aria-label="Next page">&rsaquo;</button>
+</div>
+<div class="vbar"><span class="vcount"></span><div class="vdots"></div><a class="vdl" href="#" download>Download PDF</a></div>
+</div>
+</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function () {
+  // Where the catalog PDFs live on the website. Change only this line if the folder moves.
+  var BASE = "";                          // the PDFs sit in the same folder as this page
+  var CATS = [
+    ["Primary care", "POS_Catalog_PrimaryCare_web.pdf"], ["Eye care", "POS_Catalog_EyeCare_web.pdf"],
+    ["Dentistry", "POS_Catalog_Dentistry_web.pdf"], ["Pediatrics", "POS_Catalog_Pediatrics_web.pdf"],
+    ["Dermatology", "POS_Catalog_Dermatology_web.pdf"], ["OB/GYN", "POS_Catalog_OBGYN_web.pdf"],
+    ["New patient", "POS_Catalog_NewPatient_web.pdf"]
+  ];
+  var root = document.getElementById("catalogs"); if (!root) return;
+  var tabs = root.querySelector(".ctabs"), stage = root.querySelector(".vstage"), page = root.querySelector(".vpage");
+  var prev = root.querySelector(".vprev"), next = root.querySelector(".vnext"), count = root.querySelector(".vcount");
+  var dots = root.querySelector(".vdots"), dl = root.querySelector(".vdl");
+  var doc = null, cur = 1, total = 0, cache = {}, token = 0, started = false;
+  if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  var grid = root.querySelector(".cgrid"), viewer = root.querySelector(".viewer");
+  if (!window.pdfjsLib) return;                       // keep the plain links and cards if the viewer library didn't load
+  grid.hidden = true; viewer.hidden = false;
+  [].forEach.call(tabs.children, function (a, i) {
+    a.addEventListener("click", function (e) { e.preventDefault(); open(i); });
+  });
+  function msg(t) { page.innerHTML = '<div class="vmsg">' + t + "</div>"; }
+  function render(n) {
+    if (cache[n]) return cache[n];
+    cache[n] = doc.getPage(n).then(function (pg) {
+      var w = Math.min(stage.clientWidth - 110, 760); if (w < 240) w = stage.clientWidth - 20;
+      var v1 = pg.getViewport({ scale: 1 }), scale = w / v1.width, dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var v = pg.getViewport({ scale: scale * dpr }), cv = document.createElement("canvas");
+      cv.width = v.width; cv.height = v.height; cv.style.maxWidth = w + "px";
+      return pg.render({ canvasContext: cv.getContext("2d"), viewport: v }).promise.then(function () { return cv; });
+    });
+    return cache[n];
+  }
+  function show(n, dir) {
+    if (!doc || n < 1 || n > total) return;
+    var t = token;
+    page.classList.add(dir === "back" ? "out-r" : "out-l");
+    render(n).then(function (cv) {
+      if (t !== token) return;
+      setTimeout(function () {
+        page.innerHTML = ""; page.appendChild(cv); page.classList.remove("out-l", "out-r"); cur = n; ui();
+        if (n + 1 <= total) render(n + 1); if (n - 1 >= 1) render(n - 1);
+      }, 140);
+    });
+  }
+  function ui() {
+    count.textContent = "Page " + cur + " of " + total; prev.disabled = cur <= 1; next.disabled = cur >= total;
+    [].forEach.call(dots.children, function (d, i) { d.setAttribute("aria-current", i + 1 === cur ? "true" : "false"); });
+  }
+  function open(i) {
+    token++; var t = token; doc = null; cache = {}; cur = 1;
+    [].forEach.call(tabs.children, function (b, k) { b.setAttribute("aria-selected", k === i ? "true" : "false"); });
+    var url = BASE + CATS[i][1]; dl.href = url; dl.setAttribute("download", "POS Stock Mail Catalog - " + CATS[i][0].replace("/", "-") + ".pdf");
+    msg("Loading the " + CATS[i][0].toLowerCase() + " catalog&hellip;");
+    pdfjsLib.getDocument(url).promise.then(function (d) {
+      if (t !== token) return; doc = d; total = d.numPages; dots.innerHTML = "";
+      for (var k = 1; k <= total; k++) (function (k) {
+        var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Page " + k);
+        b.addEventListener("click", function () { show(k, k < cur ? "back" : "fwd"); }); dots.appendChild(b);
+      })(k);
+      show(1, "fwd");
+    }, function () { if (t === token) msg('This catalog could not be shown here. <a href="' + url + '">Open the PDF</a> instead.'); });
+  }
+  prev.addEventListener("click", function () { show(cur - 1, "back"); });
+  next.addEventListener("click", function () { show(cur + 1, "fwd"); });
+  stage.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { show(cur + 1, "fwd"); e.preventDefault(); } if (e.key === "ArrowLeft") { show(cur - 1, "back"); e.preventDefault(); } });
+  var x0 = null;
+  stage.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchend", function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1), dx < 0 ? "fwd" : "back"); x0 = null; });
+  window.addEventListener("resize", function () { if (doc) { cache = {}; show(cur, "fwd"); } });
+  function start() { if (!started) { started = true; open(0); } }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { start(); io.disconnect(); } }, { rootMargin: "300px" }); io.observe(root);
+  } else start();
+})();
+</script>
+</div></body></html>
